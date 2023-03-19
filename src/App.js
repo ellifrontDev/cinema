@@ -6,6 +6,8 @@ import Popular from "./components/Popular";
 import Header from "./components/Header";
 import NowPlaying from "./components/NowPlaying";
 import TopRated from "./components/TopRated";
+import About from "./components/About";
+import DetailPage from "./components/detail/DetailPage";
 
 function App() {
   // const [counter, setCounter] = useState(0)
@@ -24,12 +26,12 @@ function App() {
   return (
     <div className="App">
         <Header/>
-
         <Routes>
             <Route path={'/'}/>
             <Route path={'/Now playing'} element={<NowPlaying/>}/>
             <Route path={'/popular'} element={<Popular/>}/>
             <Route path={'/Top rated'} element={<TopRated/>}/>
+            <Route path={'/movie/:id'} element={<DetailPage/>}/>
         </Routes>
 
         {/*{*/}
@@ -43,6 +45,7 @@ function App() {
 
       {/*<h1>{counter}</h1>*/}
       {/*<button onClick={()=> setCounter(counter + 1)}>inc</button>*/}
+
     </div>
   );
 }

@@ -8,13 +8,14 @@ const Header = () => {
         <div id="header">
             <div className="container">
                 <div className="header-logo">
-                    <NavLink to={'/'}><img src={headerImg} width="300px" height="150px" alt=""/></NavLink>
-
+                    <NavLink to={'/'}><img src={headerImg} width="300px" height="100px" alt=""/></NavLink>
 
                 <div className="nav">
                     <NavLink to={'/popular'}>Popular</NavLink>
                     <NavLink to={'/Now playing'}>Now playing</NavLink>
                     <NavLink to={'/Top rated'}>Top rated</NavLink>
+
+                    {/*<NavLink to={'/About '}>About</NavLink>*/}
                 </div>
                 </div>
             </div>

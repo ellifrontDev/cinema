@@ -2,6 +2,7 @@ import React from 'react';
 import {useState,useEffect} from "react";
 import axios from "axios";
 import {APIKEY} from '../ApiKey/APIKEY';
+import {Link} from "react-router-dom";
 
 const Popular = () => {
     const [popular, setPopular] = useState([])
@@ -20,8 +21,10 @@ const Popular = () => {
             <div className="popular">
                 {
                     popular.map(el => (
-                        <div>
+                        <div key={el.id}>
+                          <Link to={`/movie/${el.id}`}>
                             <img src={`https://www.themoviedb.org/t/p/w220_and_h330_face/${el.poster_path}`} alt=""/>
+                          </Link>
                         </div>
                     ))
                 }
