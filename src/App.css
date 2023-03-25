@@ -21,6 +21,7 @@ a{
 }
 .header-nav {
   margin: 0 10px;
+  color: white;
 }
 .popular{
   display: grid;
@@ -28,4 +29,28 @@ a{
   grid-template-rows: repeat(5, 1fr);
   grid-column-gap: 5px;
   grid-row-gap: 11px;
+}
+.footer-btn{
+  margin-top: 10px;
+  width: 180px;
+  height: 40px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-family:'Source Sans Pro', Arial,sans-serif;
+  color: #01B4E4;
+}
+.footer-logo h4,h2{
+  font-family:'Source Sans Pro', Arial,sans-serif;
+}
+.footer-logo h4{
+  /*padding: 10px 0;*/
+}
+
+.header-movie{
+  display: flex;
+  align-items: center;
+}
+.input{
+  padding: 10px 15px;
 }

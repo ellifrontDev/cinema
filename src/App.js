@@ -1,13 +1,13 @@
 import './App.css';
-import {useEffect, useState} from "react";
+import React, {useEffect, useState} from "react";
 import axios from "axios";
 import {Routes, Route} from 'react-router-dom'
 import Popular from "./components/Popular";
 import Header from "./components/Header";
-import NowPlaying from "./components/NowPlaying";
-import TopRated from "./components/TopRated";
-import About from "./components/About";
 import DetailPage from "./components/detail/DetailPage";
+import MovieActors from "./components/detail/Actors/MovieActors";
+import Footer from "./components/detail/Footer";
+import SearchResult from "./components/SearchResult";
 
 function App() {
   // const [counter, setCounter] = useState(0)
@@ -28,12 +28,12 @@ function App() {
         <Header/>
         <Routes>
             <Route path={'/'}/>
-            <Route path={'/Now playing'} element={<NowPlaying/>}/>
             <Route path={'/popular'} element={<Popular/>}/>
-            <Route path={'/Top rated'} element={<TopRated/>}/>
             <Route path={'/movie/:id'} element={<DetailPage/>}/>
+            <Route path={'/movie/movie-results/:movieId'} element={<MovieActors/>}/>
+            <Route path={'/movie/movie-results/:movieName'} element={<SearchResult/>}/>
         </Routes>
-
+        <Footer/>
         {/*{*/}
         {/*    users.map(el => (*/}
         {/*        <div>*/}

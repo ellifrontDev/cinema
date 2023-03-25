@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import axios from "axios";
 import {APIKEY} from "../../../ApiKey/APIKEY";
 import Slider from "react-slick";
+import {NavLink} from "react-router-dom";
 
 const Actors = ({movieId}) => {
 
@@ -17,60 +18,34 @@ const Actors = ({movieId}) => {
         getActors(APIKEY, movieId)
     })
 
-    var settings = {
-        dots: false,
-        infinite: false,
-        speed: 500,
-        slidesToShow: 4,
-        slidesToScroll: 4,
-        initialSlide: 0,
-        responsive: [
-            {
-                breakpoint: 1024,
-                settings: {
-                    slidesToShow: 3,
-                    slidesToScroll: 3,
-                    infinite: true,
-                    dots: true
-                }
-            },
-            {
-                breakpoint: 600,
-                settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 2,
-                    initialSlide: 2
-                }
-            },
-            {
-                breakpoint: 480,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1
-                }
-            }
-        ]
+    const settings = {
+        className: "center",
+        infinite: true,
+        centerPadding: "60px",
+        slidesToShow: 5,
+        swipeToSlide: true,
+
     };
 
     return (
-
         <div className="container">
             <div className="actors" style={{
-                padding: '25rem 0'
+                paddingTop: '300px'
             }}>
 
                 <Slider {...settings}>
                     {
                         actors.map(el => (
                             el.profile_path &&
-
                             <div style={{
                                 margin: '0 5px',
                             }}>
-                                <img
-                                    width={250}
-                                    src={`https://www.themoviedb.org/t/p/w138_and_h175_face${el.profile_path}`}
-                                    alt=""/>
+                                <NavLink to={`/movie/movie-results/${el.id}`}>
+                                    <img
+                                        width={250}
+                                        src={`https://www.themoviedb.org/t/p/w138_and_h175_face${el.profile_path}`}
+                                        alt=""/>
+                                </NavLink>
                                 <h4 style={{
                                     width: '250px',
                                     textAlign: 'center',
@@ -91,4 +66,3 @@ const Actors = ({movieId}) => {
 };
 
 export default Actors;
-//https://api.themoviedb.org/3/movie/{movie_id}/credits?api_key=<<api_key>>&language=en-US

@@ -18,13 +18,22 @@ const Popular = () => {
 
     return (
         <div className="container">
-            <div className="popular">
+            <div className="popular" >
                 {
                     popular.map(el => (
                         <div key={el.id}>
                           <Link to={`/movie/${el.id}`}>
-                            <img src={`https://www.themoviedb.org/t/p/w220_and_h330_face/${el.poster_path}`} alt=""/>
+                            <img style={{
+                                background: 'orangered'
+                            }} src={`https://www.themoviedb.org/t/p/w220_and_h330_face/${el.poster_path}`} alt=""/>
                           </Link>
+                            <div style={{
+                                color:"black",
+                                textAlign: 'start',
+                                marginLeft: '10px',
+                                width: '150px'}}>
+                                <p >{el.title}</p>
+                            </div>
                         </div>
                     ))
                 }

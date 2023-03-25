@@ -49,7 +49,7 @@ const DetailPage = () => {
                                 </div>
 
                                 <div className="detail--block__info--titles__btn">
-                                    <button className='vote'>{vote_average * 10}%</button>
+                                    <button className='vote'>{Math.floor(vote_average * 10)}%</button>
                                     <h4>Рейтинг</h4>
                                 </div>
                                 <p>{overview}</p>
